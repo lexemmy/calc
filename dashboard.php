@@ -33,7 +33,7 @@ $_SESSION['fullname'] = $row['fullname'];
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+  
 </head>
 
 <body id="page-top">
@@ -47,7 +47,7 @@ $_SESSION['fullname'] = $row['fullname'];
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="fa fa-grin-wink"></i>
         </div>
         
       </a>
@@ -58,7 +58,7 @@ $_SESSION['fullname'] = $row['fullname'];
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="user.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fa fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -71,27 +71,28 @@ $_SESSION['fullname'] = $row['fullname'];
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="buydata.php">
-          <i class="fas fa-fw fa-wifi"></i>
+          <i class="fa fa-wifi"></i>
           <span>Buy Data Bundle</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="fundwallet.php">
-          <i class="fas fa-fw fa-wallet"></i>
+          <i class="fa fa-credit-card
+          "></i>
           <span>Fund Wallet</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="convert.php">
-          <i class="fas fa-fw fa-sync"></i>
+          <i class="fa fa-refresh"></i>
           <span>Convert Airtime</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="buyairtime.php">
-          <i class="fas fa-fw fa-money-bill-wave"></i>
+          <i class="fa fa-dollar"></i>
           <span>Buy Airtime</span>
         </a>
       </li>
@@ -99,7 +100,7 @@ $_SESSION['fullname'] = $row['fullname'];
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="settings.php">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fa fa-wrench"></i>
           <span>Settings</span>
         </a>
        
@@ -107,7 +108,7 @@ $_SESSION['fullname'] = $row['fullname'];
 
        <li class="nav-item">
         <a class="nav-link collapsed" href="#">
-          <i class="fas fa-fw fa-user"></i>
+          <i class="fa fa-user"></i>
           <span>Account</span>
         </a>
        
@@ -115,7 +116,7 @@ $_SESSION['fullname'] = $row['fullname'];
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="modal" data-target="#logoutModal">
-          <i class="fas fa-fw fa-power-off"></i>
+          <i class="fa fa-power-off"></i>
           <span>Logout</span>
         </a>
        
@@ -156,7 +157,7 @@ $_SESSION['fullname'] = $row['fullname'];
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
+                <i class="fa-search fa-fw"></i>
               </a>
               <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
@@ -165,7 +166,7 @@ $_SESSION['fullname'] = $row['fullname'];
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
+                        <i class="fa-search fa-sm"></i>
                       </button>
                     </div>
                   </div>
@@ -176,7 +177,7 @@ $_SESSION['fullname'] = $row['fullname'];
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
+                <i class="fa fa-bell"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">2+</span>
               </a>
@@ -188,7 +189,7 @@ $_SESSION['fullname'] = $row['fullname'];
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
+                      <i class="fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
@@ -199,7 +200,7 @@ $_SESSION['fullname'] = $row['fullname'];
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
+                      <i class="fa-donate text-white"></i>
                     </div>
                   </div>
                   <div>
@@ -220,25 +221,25 @@ $_SESSION['fullname'] = $row['fullname'];
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $row['fullname'] ?></span>
-                <i class="fas fa-fw fa-user"></i>
+                <i class="fa fa-user"></i>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fa-user fa-sm fa mr-2 text-gray-400"></i>
                   Profile
                 </a>
                 <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fa-cogs fa-sm fa mr-2 text-gray-400"></i>
                   Settings
                 </a>
                 <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fa-list fa-sm fa mr-2 text-gray-400"></i>
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fa-sign-out-alt fa-sm fa mr-2 text-gray-400"></i>
                   Logout
                 </a>
               </div>
@@ -266,7 +267,7 @@ $_SESSION['fullname'] = $row['fullname'];
                       <div class="h5 mb-0 font-weight-bold text-gray-800">N <?php echo $row['wallet'] ?></div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-wallet fa-2x text-gray-300"></i>
+                      <i class="fa fa-dollar fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -283,7 +284,7 @@ $_SESSION['fullname'] = $row['fullname'];
                       <div class="h6 mb-0 text-gray-800">Fund Wallet</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-credit-card fa-2x text-gray-300"></i>
+                      <i class="fa fa-credit-card fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -300,7 +301,7 @@ $_SESSION['fullname'] = $row['fullname'];
                       <div class="h6 mb-0 text-gray-800">Buy Data Bundle</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-wifi fa-2x text-gray-300"></i>
+                      <i class="fa fa-wifi fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -317,7 +318,7 @@ $_SESSION['fullname'] = $row['fullname'];
                       <div class="h6 mb-0 text-gray-800">Convert Airtime</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-sync fa-2x text-gray-300"></i>
+                      <i class="fa fa-recycle fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -334,7 +335,7 @@ $_SESSION['fullname'] = $row['fullname'];
                       <div class="h6 mb-0 text-gray-800">Buy Airtime</div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-money-bill-wave fa-2x text-gray-300"></i>
+                      <i class="fa fa-phone fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -434,7 +435,7 @@ $_SESSION['fullname'] = $row['fullname'];
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
+    <i class="fa-angle-up"></i>
   </a>
 
   <!-- Logout Modal-->
@@ -457,8 +458,9 @@ $_SESSION['fullname'] = $row['fullname'];
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

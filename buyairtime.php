@@ -49,9 +49,9 @@ include('functions/alert.php');
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="user.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fa fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -64,42 +64,44 @@ include('functions/alert.php');
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="buydata.php">
-          <i class="fas fa-fw fa-wifi"></i>
+          <i class="fa fa-wifi"></i>
           <span>Buy Data Bundle</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="fundwallet.php">
-          <i class="fas fa-fw fa-wallet"></i>
+          <i class="fa fa-credit-card
+          "></i>
           <span>Fund Wallet</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="convert.php">
-          <i class="fas fa-fw fa-sync"></i>
+          <i class="fa fa-refresh"></i>
           <span>Convert Airtime</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="buyairtime.php">
-          <i class="fas fa-fw fa-money-bill-wave"></i>
+          <i class="fa fa-dollar"></i>
           <span>Buy Airtime</span>
         </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="settings.php">
-          <i class="fas fa-fw fa-wrench"></i>
+          <i class="fa fa-wrench"></i>
           <span>Settings</span>
         </a>
        
       </li>
 
        <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-user"></i>
+        <a class="nav-link collapsed" href="#">
+          <i class="fa fa-user"></i>
           <span>Account</span>
         </a>
        
@@ -107,7 +109,7 @@ include('functions/alert.php');
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="modal" data-target="#logoutModal">
-          <i class="fas fa-fw fa-power-off"></i>
+          <i class="fa fa-power-off"></i>
           <span>Logout</span>
         </a>
        
@@ -115,9 +117,6 @@ include('functions/alert.php');
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-
-     
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
