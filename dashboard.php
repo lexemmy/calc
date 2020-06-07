@@ -1,16 +1,4 @@
-<?php 
 
-session_start();
-include('process/indexDB.php');
-
-$userid = $_SESSION['userid'];
-$q="select fullname, wallet from users where userid ='$userid'";
-$result=$conn->query($q);
-$row= mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-$_SESSION['fullname'] = $row['fullname'];
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
