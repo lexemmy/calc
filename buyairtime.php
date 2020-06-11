@@ -4,6 +4,11 @@ session_start();
 include('process/indexDB.php');
 include('functions/alert.php');
 
+if(!isset($_SESSION['role'])){
+    header('location: login.php');
+}
+
+$userid = $_SESSION['userid'];
 
 ?>
 
@@ -21,7 +26,7 @@ include('functions/alert.php');
   <title>YinksDS</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/4ea96ace4f.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -35,7 +40,7 @@ include('functions/alert.php');
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: indigo;">
+    <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion toggled" id="accordionSidebar" style="background-color: indigo;">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -49,9 +54,9 @@ include('functions/alert.php');
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="user.php">
-          <i class="fa fa-tachometer-alt"></i>
+      <li class="nav-item">
+        <a class="nav-link" href="dashboard.php">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -64,44 +69,42 @@ include('functions/alert.php');
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="buydata.php">
-          <i class="fa fa-wifi"></i>
+          <i class="fas fa-fw fa-wifi"></i>
           <span>Buy Data Bundle</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="fundwallet.php">
-          <i class="fa fa-credit-card
-          "></i>
+          <i class="fas fa-fw fa-wallet"></i>
           <span>Fund Wallet</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="convert.php">
-          <i class="fa fa-refresh"></i>
+          <i class="fas fa-fw fa-sync"></i>
           <span>Convert Airtime</span>
         </a>
       </li>
-
       <li class="nav-item">
         <a class="nav-link collapsed" href="buyairtime.php">
-          <i class="fa fa-dollar"></i>
+          <i class="fas fa-fw fa-money-bill-wave"></i>
           <span>Buy Airtime</span>
         </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+       <li class="nav-item">
         <a class="nav-link collapsed" href="settings.php">
-          <i class="fa fa-wrench"></i>
+          <i class="fas fa-fw fa-wrench"></i>
           <span>Settings</span>
         </a>
        
       </li>
 
        <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="fa fa-user"></i>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-user"></i>
           <span>Account</span>
         </a>
        
@@ -109,7 +112,7 @@ include('functions/alert.php');
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="modal" data-target="#logoutModal">
-          <i class="fa fa-power-off"></i>
+          <i class="fas fa-fw fa-power-off"></i>
           <span>Logout</span>
         </a>
        
@@ -117,6 +120,9 @@ include('functions/alert.php');
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+
+
+     
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -144,73 +150,13 @@ include('functions/alert.php');
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">2+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header" style="background-color: indigo;">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">May 18, 20202</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">May 20, 2020</div>
-                    N1,000 has been deposited into your account!
-                  </div>
-                </a>
-                
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
            
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['fullname'] ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User name</span>
                 <i class="fas fa-fw fa-user"></i>
               </a>
               <!-- Dropdown - User Information -->
@@ -219,16 +165,13 @@ include('functions/alert.php');
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="settings.php">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+               
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -236,7 +179,6 @@ include('functions/alert.php');
             </li>
 
           </ul>
-
         </nav>
         <!-- End of Topbar -->
 
@@ -257,14 +199,15 @@ include('functions/alert.php');
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Purchase Airtime</h1>
               </div>
-              <form class="user">
+              <form class="user" method="POST" action="process/pbuyairtime.php">
                 <div class="form-group">
-                   <select class="custom-select" required="">
-                            <option value="">Select Network</option>
-                            <option value="">MTN</option>
-                            <option value="">Glo</option>
-                            <option value="">9mobile</option>
-                            <option value="">Airtel</option>
+                  <p><?php  print_alert(); ?></p>
+                   <select class="custom-select" name="network" required="">
+                            <option>Select Network</option>
+                            <option value="mtn">MTN</option>
+                            <option value="glo">Glo</option>
+                            <option value="9m0bile">9mobile</option>
+                            <option value="Airtel">Airtel</option>
                        
                           </select>
                    
@@ -276,13 +219,11 @@ include('functions/alert.php');
                 </div>
                 <div class="form-group">
                   <label>Phone Number</label>
-                  <input type="number" name="amount" class="form-control form-control-user" placeholder="08********">
+                  <input type="number" name="number" class="form-control form-control-user" placeholder="08********">
                 </div>
                 
                
-                <a href="login.php" class="btn btn-primary btn-user btn-block">
-                  Buy Airtime
-                </a>
+                <button class="btn btn-primary btn-user btn-block"> Submit</button>
                
               </form>
       
@@ -294,6 +235,69 @@ include('functions/alert.php');
 
         </div>
 
+ <?php
+
+          $q="select txref,network, phone_number, amount, status, date from buy_airtime where userid ='$userid'";
+          $result=$conn->query($q);
+
+          ?>
+
+
+
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">History</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Transaction id</th>
+                      <th>Network</th>
+                      <th>Phone Number</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Date/Time</th>
+                      
+                      
+                      
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                   <th>Transaction id</th>
+                      <th>Network</th>
+                      <th>Phone Number</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Date/Time</th>
+                      
+                    </tr>
+                  </tfoot>
+                  <tbody>
+
+                    <?php while($row = mysqli_fetch_array($result))
+                      {?>
+
+                    <tr>
+                      <td><?Php echo $row['txref']; ?></td>
+                      <td><?Php echo $row['network']; ?></td>
+                      <td><?Php echo $row['phone_number']; ?></td>
+                      <td><?Php echo $row['amount']; ?></td>
+                      <td><?Php echo $row['status']; ?></td>
+                      <td><?Php echo $row['date']; ?></td>
+                      
+                      
+                    </tr>
+                   <?php }$conn->close();?>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
 
         <!-- /.container-fluid -->

@@ -1,16 +1,3 @@
- <?php 
-
-session_start();
-include('process/indexDB.php');
-include('functions/alert.php');
-if(!isset($_SESSION['role'])){
-    header('location: login.php');
-}
-
-$userid = $_SESSION['userid'];
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,12 +12,12 @@ $userid = $_SESSION['userid'];
   <title>YinksDS</title>
 
   <!-- Custom fonts for this template-->
-  <script src="https://kit.fontawesome.com/4ea96ace4f.js" crossorigin="anonymous"></script>
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.css" rel="stylesheet">
-<script src="vendor/jquery/jquery.min.js"></script>
+  <link href="../css/sb-admin-2.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -46,7 +33,7 @@ $userid = $_SESSION['userid'];
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-2">Welcome, username</div>
+        <div class="sidebar-brand-text mx-2">Welcome, Admin</div>
       </a>
 
       <!-- Divider -->
@@ -54,7 +41,7 @@ $userid = $_SESSION['userid'];
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="Dashboard.php">
+        <a class="nav-link" href="admin.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -66,45 +53,54 @@ $userid = $_SESSION['userid'];
       
 
       <!-- Nav Item - Pages Collapse Menu -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="funduser.php">
+          <i class="fas fa-fw fa-money-bill-wave"></i>
+          <span>Fund User Wallet</span>
+        </a>
+       
+      </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="buydata.php">
+        <a class="nav-link collapsed" href="dataorders.php">
           <i class="fas fa-fw fa-wifi"></i>
-          <span>Buy Data Bundle</span>
+          <span>Data Orders</span>
         </a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link collapsed" href="fundwallet.php">
-          <i class="fas fa-fw fa-wallet"></i>
-          <span>Fund Wallet</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="atcorders.php">
+          <i class="fas fa-fw fa-sync"></i>
+          <span>Airtime To Cash Orders</span>
         </a>
       </li>
 
-     <li class="nav-item">
-        <a class="nav-link collapsed" href="convert.php">
-          <i class="fas fa-fw fa-sync"></i>
-          <span>Convert Airtime</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="baorders.php">
+          <i class="fas fa-fw fa-wallet"></i>
+          <span>Buy Airtime Orders</span>
         </a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link collapsed" href="buyairtime.php">
-          <i class="fas fa-fw fa-money-bill-wave"></i>
-          <span>Buy Airtime</span>
+        <a class="nav-link collapsed" href="allusers.php">
+          <i class="fas fa-fw fa-user"></i>
+          <span>View All Users</span>
         </a>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
+
        <li class="nav-item">
-        <a class="nav-link collapsed" href="settings.php">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Settings</span>
+        <a class="nav-link collapsed" href="Transactions.php">
+          <i class="fas fa-fw fa-money-bill-wave"></i>
+          <span>View All Transactions</span>
         </a>
        
       </li>
 
-       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-user"></i>
-          <span>Account</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="asettings.php">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Settings</span>
         </a>
        
       </li>
@@ -116,7 +112,6 @@ $userid = $_SESSION['userid'];
         </a>
        
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -147,37 +142,7 @@ $userid = $_SESSION['userid'];
           <!-- Topbar Search -->
         
           <!-- Topbar Navbar -->
-          <ul class="navbar-nav ml-auto">
-
-           
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User name</span>
-                <i class="fas fa-fw fa-user"></i>
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="settings.php">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-               
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div>
-            </li>
-
-          </ul>
+         
 
         </nav>
         <!-- End of Topbar -->
@@ -186,7 +151,7 @@ $userid = $_SESSION['userid'];
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Fund Wallet</h1>
+         <h1 class="h3 mb-4 text-gray-800">Fund User Wallet</h1>
 
             
              <div class="card o-hidden border-0 shadow-lg my-5">
@@ -197,29 +162,23 @@ $userid = $_SESSION['userid'];
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Fund wallet</h1>
-                 <p><?php  print_alert(); ?></p>
+                <h1 class="h4 text-gray-900 mb-4">Fund User Wallet</h1>
               </div>
-              <form class="user" method="POST" action="process/ppayment.php">
+              <form class="user">
+               
                 <div class="form-group">
-                    <input type="number" name="amount" class="form-control form-control-user" placeholder="Enter Amount" required="">
+                 
+                  <input type="number" name="amount" class="form-control form-control-user" placeholder="Enter User ID">
                 </div>
-              
                 <div class="form-group">
-                  <select class="custom-select" name="option">
-                            <option value="">Select payment option</option>
-                            <option value="flutterwave">Pay with flutterwave</option>
-                            <option value="Bank">Bank Transfer</option>
-                       
-                          </select>
+                  
+                  <input type="number" name="amount" class="form-control form-control-user" placeholder="Enter Amount">
                 </div>
                 
-               
-                <button class="btn btn-primary btn-user btn-block" type="submit" name="submit"> Pay</button>
+                <button class="btn btn-primary btn-block btn-user">Confirm</button>
                
               </form>
       
-
             </div>
           </div>
         </div>
@@ -228,14 +187,10 @@ $userid = $_SESSION['userid'];
 
         </div>
 
-
-
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
-
-
 
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -278,14 +233,14 @@ $userid = $_SESSION['userid'];
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+  <script src="../js/sb-admin-2.min.js"></script>
 
 </body>
 

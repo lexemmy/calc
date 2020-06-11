@@ -4,6 +4,10 @@ session_start();
 include('process/indexDB.php');
 include('functions/alert.php');
 
+if(!isset($_SESSION['role'])){
+    header('location: login.php');
+}
+
 
 
 ?>
@@ -21,7 +25,7 @@ include('functions/alert.php');
   <title>YinksDS</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/4ea96ace4f.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -35,7 +39,7 @@ include('functions/alert.php');
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: indigo;">
+    <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion toggled" id="accordionSidebar" style="background-color: indigo;">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -50,7 +54,7 @@ include('functions/alert.php');
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="user.php">
+        <a class="nav-link" href="Dashboard.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -270,7 +274,7 @@ include('functions/alert.php');
                 </div>
                 <div class="form-group">
                   
-                  <input type="number" name="new_password2" class="form-control form-control-user" placeholder="New Password">
+                  <input type="text" name="new_password2" class="form-control form-control-user" placeholder="Confirm New Password">
                 </div>
                 
                
@@ -285,7 +289,7 @@ include('functions/alert.php');
 
              <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Add Bank Details</h1>
+                <h1 class="h4 text-gray-900 mb-4">Update Bank Details</h1>
               </div>
               <form class="user" method="POST" action="process/paccount.php">
                 <div class="form-group">

@@ -1,11 +1,10 @@
 <?php
-include('indexDB.php');
+include('../process/indexDB.php');
 session_start();
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-
-$q="select userid, email, password, role from users where email ='$email'";
+$q="select email, password from admin where email ='$email'";
 
     $result=$conn->query($q);
 
@@ -17,32 +16,25 @@ $q="select userid, email, password, role from users where email ='$email'";
         $passwordFromUser = password_verify($password, $passwordFromDB);
          if($passwordFromDB == $passwordFromUser)
         {   
-            $_SESSION['userid'] = $row['userid'];
-            if ($row['role'] == "End User") {
-                $_SESSION['role'] = $row['role'];
-                
-                header('Location: ../dashboard.php');
+            $_SESSION['user'] = "Admin";
+
+                header('Location: admin.php');
                 $conn->close();
-            } else {
-                $_SESSION['role'] = $row['role'];
-                
-                header('Location: ../dashboard.php');
-                $conn->close();
-            }
+            
           
             
         }
         else
         {
             $_SESSION['error'] = "invalid password";
-            header('Location: ../login.php');
+            header('Location: index.php');
             $conn->close();
         }
 
     } else{
 
          $_SESSION['error'] =  "invalid email";
-        header('Location: ../login.php');
+        header('Location: index.php');
     $conn->close();
     }
 

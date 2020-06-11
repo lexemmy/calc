@@ -5,13 +5,17 @@ session_start();
 
 
 
+$errorCount = 0;
 
 //Data validation
 $fullname = $_POST['fullname'] != "" ? $_POST['fullname'] :  $errorCount++;
 $email = $_POST['email'] != "" ? $_POST['email'] :  $errorCount++;
 $password = $_POST['password'] != "" ? $_POST['password'] :  $errorCount++;
 $phone_number = $_POST['phone_number'] != "" ? $_POST['phone_number'] :  $errorCount++;
+$role = $_POST['role'] != "" ? $_POST['role'] :  $errorCount++;
+
 $wallet = 0.00;
+$regdate = date("Y-m-d");
 
 
 
@@ -42,6 +46,13 @@ $wallet = 0.00;
       $errorCount++;
     }
 }
+if (empty($_POST["role"])) {
+    $_SESSION['error'] =  "*role is required";
+   $errorCount++;
+  } else {
+    $role = test_input($_POST["role"]);
+     
+}
 
 $password = password_hash($password, PASSWORD_DEFAULT);
  
@@ -51,6 +62,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 if($errorCount > 0){
 header("Location: ../register.php");
 }else{
+  echo "yes";
 
 	$check = "select * from users where email='$email'";
 	$res_c = $conn->query($check);
@@ -63,7 +75,7 @@ header("Location: ../register.php");
 
 
 
-	$sql = "insert into users(fullname,email,phone_number,password,wallet) values('$fullname', '$email','$phone_number','$password','$wallet')";
+	$sql = "insert into users(fullname,email,role,phone_number,password,wallet,reg_date) values('$fullname', '$email','$role','$phone_number','$password','$wallet','$regdate')";
 $res=$conn->query($sql);
 if ($res) {
 	$_SESSION['message'] = "registeration successful you can now login";

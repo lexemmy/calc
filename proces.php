@@ -21,6 +21,7 @@ $mobile_data = ($obj['mobile_data']);
 $mobile_data_type = ($obj['mobile_data_type_name']);
 $phone = ($obj['phone']);
 $status = "pending";
+$date = date("Y-m-d h:i:s");
 
 
 
@@ -29,7 +30,7 @@ if ( $wallet > $price ) {
 
 	$new = $wallet - $price;
 
-	$sql = "insert into data_orders(userid,txref,price,mobile_data,mobile_data_type,phone,status) values('$userid','$txref','$price','$mobile_data','$mobile_data_type','$phone','$status')";
+	$sql = "insert into data_orders(userid,txref,price,mobile_data,mobile_data_type,phone,status,date) values('$userid','$txref','$price','$mobile_data','$mobile_data_type','$phone','$status','$date')";
 $res=$conn->query($sql);
 
 	$sql1 = "update users set wallet='$new' where userid='$userid'";
@@ -40,7 +41,7 @@ $res=$conn->query($sql);
 
 
 } else{
-	echo "you cannot buy data";
+	echo "you cannot buy data, insufficient fund";
 }
 
 ?>

@@ -10,6 +10,8 @@ $txref = generate_txref();
 $network = $_POST['network'];
 $number = $_POST['number'];
 $amount = $_POST['amount'];
+$date = date("Y-m-d h:i:s");
+$status = "Pending";
 
 if (!preg_match("/^[0-9]*$/",$number) || (strlen($number) != 11 )) {
      $_SESSION['error'] = "enter valid phone number";
@@ -30,7 +32,7 @@ if($errorCount > 0){
 
 header("Location: ../convert.php");
 } else{
-	$sql = "insert into convert_airtime(userid,txref,network,phone_number,amount) values('$userid','$txref','$network','$number','$amount')";
+	$sql = "insert into convert_airtime(userid,txref,network,phone_number,amount,status,date) values('$userid','$txref','$network','$number','$amount','$status','$date')";
 $res=$conn->query($sql);
 $conn->close();
 	$_SESSION['message'] = "Success! your order is awaiting confirmation";

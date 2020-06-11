@@ -3,9 +3,9 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container" data-aos="fade-in">
+    <div class="container" data-aos="flip-left" data-aos-duration="3000">
 
-      <h1>Welcome to YinksDS</h1>
+      <h1>Welcome to 247DATAPLUG</h1>
       <h2>We'll meet all your data and airtime needs </h2>
 
     </div>
@@ -19,7 +19,7 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+          <div class="col-xl-4 col-lg-5" data-aos="fade-left">
             <div class="content">
               <h3>Why Choose YinksDS?</h3>
               <p>
@@ -27,29 +27,29 @@
                 Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
               </p>
               <div class="text-center">
-                <a href="register.php" class="more-btn">Register</i></a>
-                <a href="login.php" class="more-btn">Login</a>
+                <a href="register.php" class="more-btn">Sign Up</i></a>
+                <a href="login.php" class="more-btn">Sign in</a>
               </div>
             </div>
           </div>
           <div class="col-xl-8 col-lg-7 d-flex">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="fa fa-rocket"></i>
                     <h4>Fast</h4>
                     <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-right" data-aos-delay="200">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="fa fa-lock"></i>
                     <h4>Secured</h4>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="300">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="fa fa-usd"></i>
                     <h4>Best Deals</h4>
@@ -89,46 +89,46 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit quas.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="col-lg-4 col-md-6" data-aos="flip-right">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-usd"></i></div>
               <h4 class="title"><a href="">We Buy Airtime</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-wifi"></i></i></div>
               <h4 class="title"><a href="">We Sell Data</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6" data-aos="flip-right" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-phone"></i></div>
               <h4 class="title"><a href="">We Sell Airtime</a></h4>
               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-star"></i></div>
               <h4 class="title"><a href="">Other Services</a></h4>
               <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6" data-aos="flip-right" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-star"></i></i></div>
               <h4 class="title"><a href="">Other Services</a></h4>
               <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-4 col-md-6" data-aos="flip-left" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="fa fa-star"></i></i></div>
               <h4 class="title"><a href="">Other Services</a></h4>
@@ -144,7 +144,7 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="zoom-out-down">
 
         <div class="owl-carousel testimonials-carousel">
 
