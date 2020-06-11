@@ -1,28 +1,3 @@
-<?php 
-
-session_start();
-include('process/indexDB.php');
-
-if(!isset($_SESSION['role'])){
-    header('location: login.php');
-}
-
-$userid = $_SESSION['userid'];
-$q="select wallet from users where userid ='$userid'";
-$result=$conn->query($q);
-$row= mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-$wallet = $row['wallet'];
-
-if ($_SESSION['role'] == 'Reseller' && $wallet < 5000 ) {
-  $_SESSION['info'] = "You must maintain a minimum of N5000 as a reseller";
-  header('location: Dashboard.php');
-  die();
-}
-
-$userid = $_SESSION['userid'];
-
-?>
 
 
 <!DOCTYPE html>
@@ -60,7 +35,7 @@ $userid = $_SESSION['userid'];
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion toggled" id="accordionSidebar" style="background-color: indigo;">
+    <ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion toggled" id="accordionSidebar" style="background-color: #00008b;">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -167,7 +142,7 @@ $userid = $_SESSION['userid'];
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"  style="color: indigo;"></i>
+            <i class="fa fa-bars"  style="color: #00008b;"></i>
           </button>
 
           <!-- Topbar Search -->
@@ -247,7 +222,7 @@ $userid = $_SESSION['userid'];
                 <div class="form-group">
                   <input disabled value="" type="text" class="form-control form-control-user" id="mobile_data_amount" placeholder="Amount">
                 </div>
-               <button id="PurchaseMobileData" class="btn btn-user btn-block bg-gradient" style="background-color: indigo; color: white;">Buy Data</button>
+               <button id="PurchaseMobileData" class="btn btn-user btn-block bg-gradient" style="background-color: #00008b; color: white;">Buy Data</button>
                
                
               </form>
@@ -259,12 +234,6 @@ $userid = $_SESSION['userid'];
     </div>
 
         </div>
- <?php
-
-          $q="select txref,price, mobile_data, mobile_data_type, phone, status, date from data_orders where userid ='$userid'";
-          $result=$conn->query($q);
-
-          ?>
 
 
 
@@ -303,21 +272,7 @@ $userid = $_SESSION['userid'];
                   </tfoot>
                   <tbody>
 
-                    <?php while($row = mysqli_fetch_array($result))
-                      {?>
-
-                    <tr>
-                      <td><?Php echo $row['txref']; ?></td>
-                      <td><?Php echo $row['price']; ?></td>
-                      <td><?Php echo $row['mobile_data']; ?></td>
-                      <td><?Php echo $row['mobile_data_type']; ?></td>
-                      <td><?Php echo $row['phone']; ?></td>
-                      <td><?Php echo $row['status']; ?></td>
-                      <td><?Php echo $row['date']; ?></td>
-                      
-                    </tr>
-                   <?php }$conn->close();?>
-                    
+                 
                   </tbody>
                 </table>
               </div>

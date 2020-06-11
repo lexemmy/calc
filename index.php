@@ -28,7 +28,7 @@
               </p>
               <div class="text-center">
                 <a href="register.php" class="more-btn">Sign Up</i></a>
-                <a href="login.php" class="more-btn">Sign in</a>
+                <a href="dashboard.php" class="more-btn">Sign in</a>
               </div>
             </div>
           </div>

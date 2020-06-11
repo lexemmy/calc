@@ -1,24 +1,4 @@
-<?php 
 
-session_start();
-
-include('process/indexDB.php');
-include('functions/alert.php');
-
-if(!isset($_SESSION['role'])){
-    header('location: login.php');
-}
-
-$userid = $_SESSION['userid'];
-$q="select fullname, email, wallet from users where userid ='$userid'";
-$result=$conn->query($q);
-$row= mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-$_SESSION['fullname'] = $row['fullname'];
-$_SESSION['email'] = $row['email'];
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -202,7 +182,7 @@ $_SESSION['email'] = $row['email'];
           
 
           <div class="col-xl-6 col-md-6 mb-4">
-             <p><?php  print_alert(); ?></p>
+           
             </div>
             
              <!-- Earnings (Monthly) Card Example -->
@@ -212,7 +192,7 @@ $_SESSION['email'] = $row['email'];
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Wallet Balance</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">N <?php echo $row['wallet'] ?></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">N2000</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-wallet fa-2x text-gray-300"></i>
