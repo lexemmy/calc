@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #313030;
+  color: #be723c;
 }
 
 a {
@@ -141,6 +141,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   max-height: 40px;
+}
+#footer img {
+  padding: 0;
+  margin: 0;
+  max-height: 20px;
 }
 
 #main {
@@ -564,10 +569,10 @@ section {
 
 .why-us .content .more-btn {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
+  background: #fff;
   padding: 6px 30px 8px 30px;
-  color: #fff;
-  border-radius: 50px;
+  color: #00aeff;
+  border-radius: 10px;
   transition: all ease-in-out 0.4s;
   border-color: #fff;
   border-style: dotted;
@@ -1066,7 +1071,7 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #313030;
+  color: #be723c;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
   border-radius: 50px;
@@ -1274,7 +1279,7 @@ section {
 .pricing ul {
   padding: 0;
   list-style: none;
-  color: #313030;
+  color: #be723c;
   text-align: center;
   line-height: 20px;
   font-size: 14px;
@@ -1426,7 +1431,7 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact .info-box {
-  color: #313030;
+  color: #be723c;
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 20px;
 }
@@ -1659,7 +1664,7 @@ section {
 }
 
 .blog .entry .entry-content blockquote p {
-  color: #313030;
+  color: #be723c;
   line-height: 1.6;
   margin-bottom: 0;
   font-style: italic;
@@ -1816,7 +1821,7 @@ section {
 
 .blog .blog-comments .comment h5 a {
   font-weight: bold;
-  color: #313030;
+  color: #be723c;
   transition: 0.3s;
 }
 
@@ -2217,7 +2222,7 @@ section {
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
-  color: #313030;
+  color: #be723c;
 }
 
 #footer .social-links a {
