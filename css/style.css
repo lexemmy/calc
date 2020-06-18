@@ -71,17 +71,6 @@ input[type="number"] {
   border: 1px solid #062863;
 }
 
-.form-field select {
-  outline: none;
-  -moz-outline: none;
-  -webkit-outline: none;
- 
-  -webkit-appearance: none;
-  appearance: none;
-  -moz-appearance: none;
-  background-position: 95% 50%;
-  background-repeat: no-repeat;
-}
 
 /* NAVBAR */
 .site-navbar {
