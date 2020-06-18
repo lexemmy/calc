@@ -143,7 +143,7 @@
               </form>
              
             </div>
-            <span class="output" id="tag">O.O</span>
+          <span class="output" id="tag">O.O</span> 
           </div>
 
 
@@ -161,14 +161,14 @@
 
         </div>
         <div class="col-md-4">
-          <div class="form-row">
+          <div class="form-row pb-4">
             <h4>Monthly Saving Target calculator</h4>
             <div class="form-field">
               <form>
                 <label for="amount">What's your target amount?</label>
                 <input style="color:black" type="number" name="target" id='target' required="">
   
-                <label for="amount" class="pt-3">In how many Monthss?</label>
+                <label for="amount" class="pt-3">In how many Months?</label>
                 <input style="color:black" type="number" name="month" required="">
   
                 <label for="amount" class="pt-3"></label>
@@ -207,7 +207,7 @@
       m = parseInt(x.day.value);
       d = t / m;
 
-      document.getElementById("tag").innerHTML = "&#8358;" + d;
+      document.getElementById("tag").innerHTML = "you will have to save &#8358;" + d + " everyday to meet your target";
     }
 
     function calcMonth(y) {
@@ -216,7 +216,7 @@
       m = parseInt(y.month.value);
       d = t / m;
 
-      document.getElementById("tag2").innerHTML = "&#8358;" + d;
+      document.getElementById("tag2").innerHTML = "you will have to save &#8358;" + d + " every month to meet your target";
     }
 
 
