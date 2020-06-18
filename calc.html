@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0027)http://bgpcnpc-hssc-hq.com/ -->
+<!-- saved from url=(0027) -->
 <html lang="en">
 
 <head>
@@ -31,12 +31,12 @@
                 <i class="fa fa-navicon"></i>
               </label>
               <ul class="menu" style="list-style-type: none;">
-                <li><a href="http://bgpcnpc-hssc-hq.com/#" class="navbar-link">About</a></li>
-                <li><a href="http://bgpcnpc-hssc-hq.com/#" class="navbar-link">Stories</a></li>
-                <li><a href="http://bgpcnpc-hssc-hq.com/#" class="navbar-link">FAQ</a></li>
-                <li><a href="http://bgpcnpc-hssc-hq.com/#" class="navbar-link">Blog</a></li>
-                <li><a href="http://bgpcnpc-hssc-hq.com/#" class="navbar-link">Login</a></li>
-                <li><a href="http://bgpcnpc-hssc-hq.com/#" class="navbar-link">Create Account</a></li>
+                <li><a href="#" class="navbar-link">About</a></li>
+                <li><a href="#" class="navbar-link">Stories</a></li>
+                <li><a href="#" class="navbar-link">FAQ</a></li>
+                <li><a href="#" class="navbar-link">Blog</a></li>
+                <li><a href="#" class="navbar-link">Login</a></li>
+                <li><a href="#" class="navbar-link">Create Account</a></li>
                 <label for="chk" class="hide-menu-btn">
                   <i class="fa fa-times"></i>
                 </label>
@@ -148,7 +148,7 @@
               </form>
 
             </div>
-            <span class="output" id="tag">O.O</span>
+          <span class="output" id="tag">O.O</span> 
           </div>
 
 
@@ -166,18 +166,18 @@
 
         </div>
         <div class="col-md-4">
-          <div class="form-row">
+          <div class="form-row pb-4">
             <h4>Monthly Saving Target calculator</h4>
             <div class="form-field">
               <form>
                 <label for="amount">What's your target amount?</label>
                 <input style="color:black" type="number" name="target" id='target' required>
                 <p class='error monthly-target-error'></p>
-
-                <label for="amount" class="pt-3">In how many Monthss?</label>
-                <input style="color:black" type="number" name="month" required>
+                <label for="amount" class="pt-3">In how many Months?</label>
+                <input style="color:black" type="number" name="month" required="">
                 <p class='error monthly-error'></p>
 
+  
                 <label for="amount" class="pt-3"></label>
 
                 <input class="output pt-3" style="color:#fff" type="button" name="btn" value="Calculate Target"
@@ -245,6 +245,7 @@
         }
       }
 
+      document.getElementById("tag").innerHTML = "you will have to save &#8358;" + d + " everyday to meet your target";
     }
 
     function calcMonth(y) {
@@ -269,6 +270,7 @@
         }
       }
 
+      document.getElementById("tag2").innerHTML = "you will have to save &#8358;" + d + " every month to meet your target";
     }
 
 
