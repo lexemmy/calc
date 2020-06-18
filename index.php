@@ -68,6 +68,7 @@
                   <div class="form-field">
                     <label for="amount">How much do you want to save?</label>
                     <input style="color:black" type="number" value='<? if(isset($_SESSION['amounto'])) echo $_SESSION['amounto']; else ''; ?>' name="amounto" id="" required="">
+                    <p class='error amount-error'></p>
                   </div>
                 </div>
               </div>
@@ -95,6 +96,7 @@
                     <div class="form-field">
                       <label for="amount">Numbers of Months?</label>
                       <input style="color:black" value='<? if(isset($_SESSION['daysnum'])) echo $_SESSION['daysnum']; else ''; ?>' type="number" name="daysnum" id="days" required="">
+                      <p class='error months-error'></p>
 
                     </div>
 
@@ -144,9 +146,11 @@
               <form>
                 <label for="amount">What's your target amount?</label>
                 <input style="color:black" type="number" name="target" required="">
+                <p class='error daily-target-error'></p>
   
                 <label for="amount" class="pt-3">In how many days?</label>
                 <input style="color:black" type="number" name="day" required="">
+                <p class='error daily-error'></p>
   
                 <label for="amount" class="pt-3"></label>
   
@@ -189,9 +193,11 @@
               <form>
                 <label for="amount">What's your target amount?</label>
                 <input style="color:black" type="number" name="target" id='target' required="">
+                <p class='error monthly-target-error'></p>
   
                 <label for="amount" class="pt-3">In how many Months?</label>
                 <input style="color:black" type="number" name="month" required="">
+                 <p class='error monthly-error'></p>
   
                 <label for="amount" class="pt-3"></label>
   
@@ -220,34 +226,80 @@
     </div>
 
   </section>
-
-  <script type="text/javascript">
+ <script type="text/javascript">
 
 
     function calc(f) {
+      let isValid = f.checkValidity();
       var p, r, t, si;
       p = parseInt(f.amounto.value);
       r = parseFloat(f.rate.value);
       t = parseInt(f.daysnum.value); //number of days
-      si = (p * r * t) / 12;
+      if (isValid) {
+        let errors = f.querySelectorAll('.error');
+        for (var i = 0; i < errors.length; i++) {
+          errors[i].textContent = '';
+        }
+        si = (p * r * t) / 12;
+        document.getElementById("exp").innerHTML = "&#8358;" + Math.round((si + p).toFixed(2));
+      }
+      else {
+        if (p != NaN) {
+          f.querySelector('.amount-error').textContent = 'Please enter a valid amount'
+        }
+        if (t != NaN) {
+          f.querySelector('.months-error').textContent = 'Please enter a valid Month'
+        }
+      }
 
-      document.getElementById("exp").innerHTML = "&#8358;" + Math.round((si + p).toFixed(2));
     }
 
     function calcDay(x) {
+      let isValid = x.checkValidity();
       var t, m;
       t = parseInt(x.target.value);
       m = parseInt(x.day.value);
-      d = t / m;
+      if (isValid) {
+        let errors = x.querySelectorAll('.error');
+        for (var i = 0; i < errors.length; i++) {
+          errors[i].textContent = '';
+        }
+        d = t / m;
+        document.getElementById("tag").innerHTML = "&#8358;" + d;
+      }
+      else {
+        if (t != NaN) {
+          x.querySelector('.daily-target-error').textContent = 'Please enter a valid amount'
+        }
+        if (m != NaN) {
+          x.querySelector('.daily-error').textContent = 'Please enter a valid Day'
+        }
+      }
 
       document.getElementById("tag").innerHTML = "you will have to save &#8358;" + d + " everyday to meet your target";
     }
 
     function calcMonth(y) {
+      let isValid = y.checkValidity();
       var t, m;
       t = parseInt(y.target.value);
       m = parseInt(y.month.value);
-      d = t / m;
+      if (isValid) {
+        let errors = y.querySelectorAll('.error');
+        for (var i = 0; i < errors.length; i++) {
+          errors[i].textContent = '';
+        }
+        d = t / m;
+        document.getElementById("tag2").innerHTML = "&#8358;" + d;
+      }
+      else {
+        if (t != NaN) {
+          y.querySelector('.monthly-target-error').textContent = 'Please enter a valid amount'
+        }
+        if (m != NaN) {
+          y.querySelector('.monthly-error').textContent = 'Please enter a valid month'
+        }
+      }
 
       document.getElementById("tag2").innerHTML = "you will have to save &#8358;" + d + " every month to meet your target";
     }
