@@ -120,7 +120,9 @@ input[type="number"] {
   visibility: hidden;
   z-index: -1111;
 }
-
+.error{
+  color:red;
+}
 @media screen and (max-width: 800px) {
   .show-menu-btn,
   .hide-menu-btn {
