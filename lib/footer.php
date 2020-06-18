@@ -5,11 +5,7 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6 footer-contact">
-            <div class="logo mr-auto">
-       
-        <!-- Uncomment below if you prefer to use an image logo -->
-         <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-      </div>
+            <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid" height=""></a>
             <p>
               Address Street <br>
               location, state<br>
