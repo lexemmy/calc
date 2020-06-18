@@ -47,19 +47,19 @@
     <section class="bg-overlay">
         <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <img src="image/img.png" width="100%">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <div class="form-container">
                     <form>
-                        <div class="col-md-5">
+                        <div class="col-md-10">
                         <h4>Interest Calculator</h4> 
-                        <p class="text-align-center text-primary">save and get interest!</p>
+                        
                     </div>
                         
                             <div class="form-row">
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-field">
                                         <label for="amount">How much do you want to save?</label>
                                         <input style="color:black" type="number" name="amounto" id="" required="">
@@ -69,7 +69,7 @@
                             <div class="form-row">
 
                                 <!-- <div class="col-md-"></div> -->
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-field">
                                         <label for="amount"> Select Package</label>
                                         <select name="rate" id="">
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-field">
                         
                                         <div class="form-field">
@@ -99,7 +99,7 @@
                                                 <input class="output" style="color:#fff" type="button" name="btn" value="Calculate RIO" onclick="calc(this.form)">
                                            
                 <p class="pt-3">Return on Investment</p>
-                <h3 class="btn btn-outline" style="color:green;" id="exp">0.00</h3>
+                <h3 class="output" id="exp">0.00</h3>
           
                                       
                                         </div>
@@ -114,13 +114,70 @@
         </div>
 
     </div>
-    </div></section>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="form-row">
+                                <h4 class="pt-3">Daily Saving Target calculator</h4>
+                                    <div class="form-field">
+                                        <label for="amount">What's your target amount?</label>
+                                        <input style="color:black" type="number" name="target" required="">
+
+                                        <label for="amount" class="pt-3">In how many days?</label>
+                                        <input style="color:black" type="number" name="day" required="">
+
+                                        <label for="amount" class="pt-3"></label>
+
+                                        <input class="output pt-3" style="color:#fff" type="button" name="btn" value="Calculate Target" onclick="calct(this.form)">
+                                    </div>
+                                <span class="output" id="tag">O.O</span>
+                            </div>
+
+                           
+             </div>
+            <div class="col-md-6"><img src="image/money.png" width="100%"></div>
+            
+        </div>
+        
+    </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+<img src="image/img2.png" width="100%">
+
+                           
+             </div>
+            <div class="col-md-4"> <div class="form-row">
+                                <h4>Monthly Saving Target calculator</h4>
+                                    <div class="form-field">
+                                        <label for="amount">What's your target amount?</label>
+                                        <input style="color:black" type="number" name="target" required="">
+
+                                        <label for="amount" class="pt-3">In how many Monthss?</label>
+                                        <input style="color:black" type="number" name="day" required="">
+
+                                        <label for="amount" class="pt-3"></label>
+
+                                        <input class="output pt-3" style="color:#fff" type="button" name="btn" value="Calculate Target" onclick="calct(this.form)">
+                                    </div>
+                                <span class="output" id="tag">O.O</span>
+                            </div>
+</div>
+            
+        </div>
+        
+    </div>
+
+</section>
     
     <script type="text/javascript">
    
-        var p,r,t,si;
+       
     function calc(f){
-     
+         var p,r,t,si;
         p=parseInt(f.amounto.value);
         r=parseFloat(f.rate.value);
         t=parseInt(f.daysnum.value); //number of days
@@ -128,6 +185,26 @@
     
         document.getElementById("exp").innerHTML="&#8358;"+Math.round((si+p).toFixed(2));
 }
+
+  function calct(x){
+         var t,m;
+        t=parseInt(x.target.value);
+        m=parseInt(x.day.value);
+        d=t/m;
+    
+        document.getElementById("tag").innerHTML="&#8358;"+d;
+}
+
+    function calct(y){
+         var t,m;
+        t=parseInt(y.target.value);
+        m=parseInt(y.month.value);
+        d=t/m;
+    
+        document.getElementById("tag2").innerHTML="&#8358;"+d;
+}
+      
+
     </script>
 
 
@@ -141,4 +218,8 @@
 
 
 
-</body></html>
+</body>
+<footer>
+    
+</footer>
+</html>
