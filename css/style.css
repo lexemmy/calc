@@ -64,7 +64,7 @@ input[type="number"] {
 
 .form-field input,
 .form-field select {
-  color: rgba(180, 180, 180, 0.7);
+  
   width: 100%;
   padding: 10px 20px;
   border-radius: 10px 10px 10px 0px;
